@@ -1,27 +1,75 @@
+
 # BoxyMcSquares
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
+This project was made as a part of a video series showing how to create a mobile game using Cordova, Angular, and PIXI.js
 
-## Development server
+To view more information about the project, check out the videos on YouTube or go to [Technically Work's Website](https://technicallywork.com)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Prerequisites
 
-## Code scaffolding
+* [NodeJS/NPM](https://nodejs.org/en/) is required
+* [Angular CLI](https://cli.angular.io/) must be installed
+* To build Android/iOS, [Cordova](https://cordova.apache.org/) must be installed
+* Android SDK needs to be installed to build to Android
+* iOS SDK needs to be installed to build to iOS
+* You must be on a Mac to build to iOS
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Download all the files (clone this repo)
 
-## Build
+Go to the directory of files and install the needed dependencies
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+```
+npm install
+```
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Running the app locally on your computer
 
-## Running end-to-end tests
+Run the Angular Devlopment Server that's built in with the Angular CLI
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+ng serve
+```
 
-## Further help
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Building the app to Android/iOS
+
+Build Angular using the Angular CLI build command. This needs to be done every time the code is updated.
+
+```
+ng build --prod
+```
+
+The build artifacts will be stored in the `cordova/www` directory. Use the `-prod` flag for a production build.
+
+Change the directory to the cordova directory
+
+```
+cd cordova
+```
+
+Add a platform (either android or ios) to cordova. Both platforms can be added if on a mac.
+This only needs to be done once. 
+
+```
+cordova platform add android
+```
+
+Run the cordova build command for either platform - android/ios. This needs to be done every time the code is updated.
+
+```
+cordova build android
+```
+
+This will create the apk/ipa file that can be installed on a device.
+
+You can also emulate the app locally on your computer
+
+```
+cordova run android
+```
+
+This will start an emulator on your computer (if you have it setup properly)
+

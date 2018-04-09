@@ -1,16 +1,19 @@
+
+// 3rd Party
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+// Custom
 import { AppComponent } from './app.component';
+
 
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent,
 	],
 	imports: [
-		BrowserModule
+		BrowserModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
