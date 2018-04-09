@@ -108,12 +108,7 @@ export class Game {
 		text.y = this.windowHeight / 2;
 		text.interactive = true;
 		text.buttonMode = true;
-		text.on('pointerdown', (event) => {
-			this.pixiApp.stage.removeChild(text);
-			this.pixiApp.stage.removeChild(background);
-			blur.blur = 0;
-			this.currentLevel.startLevel();
-		})
+
 
 
 		// Adds a simple white background with transparency over the squares
@@ -125,6 +120,15 @@ export class Game {
 		background.alpha = .2;
 		background.interactive = true;
 		background.buttonMode = true;
+
+
+		// Handles the interaction logic for the text & background
+		text.on('pointerdown', (event) => {
+			this.pixiApp.stage.removeChild(text);
+			this.pixiApp.stage.removeChild(background);
+			blur.blur = 0;
+			this.currentLevel.startLevel();
+		})
 		background.on('pointerdown', (event) => {
 			this.pixiApp.stage.removeChild(text);
 			this.pixiApp.stage.removeChild(background);

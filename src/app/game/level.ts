@@ -33,7 +33,7 @@ export class Level {
 	) {
 		this.addSquares(20);
 
-		// Create a new shot clock. This could be 
+		// Create a new shot clock. This could be
 		this.shotClock = new ShotClock(3000);
 		this.view.addChild(this.shotClock.view);
 		this.shotClock.events$
